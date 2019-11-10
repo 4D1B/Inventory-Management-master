@@ -65,3 +65,52 @@ D:\Inventory-Management-master\InvSystem\MainInterface\obj\Debug\MainInterface.e
 D:\Inventory-Management-master\InvSystem\MainInterface\obj\Debug\MainInterface.pdb
 D:\Inventory-Management-master\InvSystem\MainInterface\bin\Debug\mgmt.mdf
 D:\Inventory-Management-master\InvSystem\MainInterface\bin\Debug\mgmt_log.ldf
+E:\buscom\Inventory-Management-master-master\MainInterface\bin\Debug\mgmt.mdf
+E:\buscom\Inventory-Management-master-master\MainInterface\bin\Debug\mgmt_log.ldf
+E:\buscom\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.exe.config
+E:\buscom\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.exe.manifest
+E:\buscom\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.application
+E:\buscom\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.exe
+E:\buscom\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.pdb
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.csprojAssemblyReference.cache
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.AdminView.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Customer_Product_Overview.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Registration_Form.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Customer_Review.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Form1.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.FirstInt.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.PrintFormWithCustomerInfo.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.ProductList.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Properties.Resources.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.ReviewSeeingForm.resources
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.csproj.GenerateResource.cache
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.csproj.CoreCompileInputs.cache
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.exe.manifest
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.application
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.exe
+E:\buscom\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.pdb
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\bin\Debug\mgmt.mdf
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\bin\Debug\mgmt_log.ldf
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.exe.config
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.exe.manifest
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.application
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.exe
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\bin\Debug\MainInterface.pdb
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.csprojAssemblyReference.cache
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.AdminView.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Customer_Product_Overview.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Registration_Form.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Customer_Review.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.Form1.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.FirstInt.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.PrintFormWithCustomerInfo.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.ProductList.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Properties.Resources.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.Presentation.ReviewSeeingForm.resources
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.csproj.GenerateResource.cache
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.csproj.CoreCompileInputs.cache
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.exe.manifest
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.application
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.exe
+E:\acn\Inventory-Management-master-master (1)\Inventory-Management-master-master\MainInterface\obj\Debug\MainInterface.pdb
+D:\Inventory-Management-master\InvSystem\MainInterface\obj\Debug\MainInterface.csprojAssemblyReference.cache

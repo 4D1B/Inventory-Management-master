@@ -27,14 +27,18 @@ using System.IO;
 using System.Windows;
 
 
-
 namespace MainInterface.Presentation
 {
     public partial class PrintFormWithCustomerInfo : Form
     {
+
         public PrintFormWithCustomerInfo()
         {
             InitializeComponent();
+
+
+
+
         }
 
         LogicWork l1 = new LogicWork();
@@ -42,10 +46,10 @@ namespace MainInterface.Presentation
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
-        
+
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
@@ -58,13 +62,13 @@ namespace MainInterface.Presentation
 
         private void Statuschanged()
         {
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            
+
 
         }
 
@@ -76,14 +80,18 @@ namespace MainInterface.Presentation
             this.Controls.Add(panel);
             Graphics grp = panel.CreateGraphics();
             Size formSize = this.ClientSize;
-            bitmap = new Bitmap(formSize.Width, formSize.Height, grp);
+            var height = this.Size.Height; //Gets the current Height of the Form.
+            var width = this.Size.Width; //Gets the current Width of the Form.
+
+            this.Size = new Size(1500, 2000);
+            bitmap = new Bitmap(width, height, grp);
             grp = Graphics.FromImage(bitmap);
             Point panelLocation = PointToScreen(panel.Location);
             grp.CopyFromScreen(panelLocation.X, panelLocation.Y, 0, 0, formSize);
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.ShowDialog();
-        }   
+        }
 
         Bitmap memoryImage;
 
@@ -109,7 +117,7 @@ namespace MainInterface.Presentation
 
         private void button1_Click_(object sender, EventArgs e)
         {
-           
+
 
             //Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
             //PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Payment.pdf", FileMode.Create));
@@ -122,13 +130,13 @@ namespace MainInterface.Presentation
         private void PrintFormWithCustomerInfo_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'mgmtDataSet.Product_Table' table. You can move, or remove it, as needed.
-            
+
 
         }
 
         private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            
+
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -157,12 +165,12 @@ namespace MainInterface.Presentation
 
         private void button3_Click(object sender, EventArgs e)
         {
-            l1.AddCustomerInfo(textBox2.Text.ToString(),textBox3.Text.ToString());
+            l1.AddCustomerInfo(textBox2.Text.ToString(), textBox3.Text.ToString());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -174,17 +182,17 @@ namespace MainInterface.Presentation
 
         private void button6_Click(object sender, EventArgs e)
         {
-          //  string barcode = textBox4.Text;
+            //  string barcode = textBox4.Text;
 
-           // Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);
+            // Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);
 
-           
+
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-           // l1.GoToSold();
+            // l1.GoToSold();
         }
         Bitmap bitmap;
         private void PrintDocument1_PrintPage_2(object sender, PrintPageEventArgs e)

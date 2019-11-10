@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MainInterface.Logic;
+
+
 namespace MainInterface.Presentation
 {
     public partial class AdminView : Form
@@ -15,6 +17,7 @@ namespace MainInterface.Presentation
         public AdminView()
         {
             InitializeComponent();
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -43,9 +46,19 @@ namespace MainInterface.Presentation
         LogicWork l1 = new LogicWork();
         private void Button1_Click(object sender, EventArgs e)
         {
-            string str=l1.getlogin(textBox1.Text, textBox2.Text);
-            MessageBox.Show(str);
-            new FirstInt().Show();
+            string str = l1.Admin_Login_Press(textBox1.Text, textBox2.Text);
+            
+            if (str == "Password matched,welcome")
+            {
+                MessageBox.Show(str);
+                new FirstInt().Show();
+                Hide();
+            }
+            else
+            {
+                MessageBox.Show(str);
+
+            }
 
         }
 

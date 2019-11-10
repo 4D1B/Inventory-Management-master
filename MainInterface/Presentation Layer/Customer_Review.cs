@@ -26,6 +26,7 @@ namespace MainInterface.Presentation
         public Customer_Review()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,41 +35,41 @@ namespace MainInterface.Presentation
             Form.Show();
             Hide();
         }
-        public int value = 0;
+        public Double value = 0;
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             value = 1;
-         //   MessageBox.Show("Bad");
-           // DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //   MessageBox.Show("Bad");
+            // DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             value = 2;
-           // MessageBox.Show("Good");
-           // DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            // MessageBox.Show("Good");
+            // DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             value = 3;
-          //  MessageBox.Show("Sufficient");
-           // DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //  MessageBox.Show("Sufficient");
+            // DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             value = 4;
-           // MessageBox.Show("Excellent");
-         //   DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            // MessageBox.Show("Excellent");
+            //   DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
         private void radioButton5_CheckedChanged(object sender, EventArgs e)
         {
             value = 5;
-          //  MessageBox.Show("Proficient");
-         //   DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //  MessageBox.Show("Proficient");
+            //   DialogResult res = MessageBox.Show("Are You Sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -101,12 +102,15 @@ namespace MainInterface.Presentation
 
             SqlDataReader dr;
 
-            l1.GetItemFromLogicAgain(comboBox1,comboBox2,comboBox3);
+            l1.CustomerReviewMainSurface(comboBox1, comboBox2, comboBox3);
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // SqlDataReader dr;
+            // comboBox2 = ;
+            // comboBox3 = ;
+            l1.CustomerRating(comboBox1.SelectedItem.ToString(), comboBox2, comboBox3);
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,13 +126,14 @@ namespace MainInterface.Presentation
         LogicWork l1 = new LogicWork();
         private void Button2_Click(object sender, EventArgs e)
         {
-            l1.cus_rev(comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString());
+            l1.Customer_Rating_Select(comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString());
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            l1.Customer_Rating_Select(comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString());
             MessageBox.Show(value.ToString());
-            l1.sendval(value);
+            l1.Shoot_Rating(value, comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString());
         }
 
         private void TextBox7_TextChanged(object sender, EventArgs e)

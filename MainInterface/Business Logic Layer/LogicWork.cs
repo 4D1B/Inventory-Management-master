@@ -15,8 +15,8 @@ namespace MainInterface.Logic
 {
     public class LogicWork
     {
-        
-        
+
+
         DataGridView Datagridview1 = new DataGridView();
         DatabaseWork dw = new DatabaseWork();
 
@@ -38,13 +38,13 @@ namespace MainInterface.Logic
 
             dataGridView1.Rows[k].Cells[3].Value = sum.ToString();
 
-            if(sum> 2000)
+            if (sum > 2000)
             {
-                double x= sum/50;
+                double x = sum / 50;
                 s = x.ToString();
             }
             else
-                {
+            {
                 s = null;
             }
 
@@ -57,128 +57,151 @@ namespace MainInterface.Logic
             int x = Convert.ToInt32(s[1]);
             int y = Convert.ToInt32(s[3]);
 
-            int z = (y-x);
-            dw.UpdateLot_2(z,s);
+            int z = (y - x);
+            dw.UpdateLot_2(z, s);
         }
 
-        public DataTable CallLogicLayer(string combotext)
+        public DataTable SelectProductInfo(string combotext)
         {
             DataTable dt = new DataTable();
-            dt = dw.databaselayerforcombo(combotext);
+            dt = dw.SelectProductInfo_2(combotext);
             return dt;
         }
 
-        public int CallAddItem(params string[] arg)
+        public int AddToProduct(params string[] arg)
         {
-            return (dw.CallAddItem_2(arg));
+            return (dw.AddToProduct_2(arg));
         }
 
-        public void GetItemFromLogic(ComboBox comboBox1)
+        public void LoadproductInfo(ComboBox comboBox1)
         {
-            SqlDataReader rd;
-            rd = dw.CallGetItemFromDB();
-            while (rd.Read())
+            try
             {
-                if ((!comboBox1.Items.Contains(rd["type"]) && (rd["type"] != "")))
-                    comboBox1.Items.Add(rd["type"]);
+                SqlDataReader rd;
+                rd = dw.LoadProductInfo_2();
+                while (rd.Read())
+                {
+                    if ((!comboBox1.Items.Contains(rd["type"]) && (rd["type"] != "")))
+                        comboBox1.Items.Add(rd["type"]);
 
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
 
 
         }
 
-        public void GetItemFromLogicAgain(ComboBox comboBox1,ComboBox combobox2, ComboBox combobox3)
+        public void CustomerReviewMainSurface(ComboBox comboBox1, ComboBox combobox2, ComboBox combobox3)
         {
-            SqlDataReader rd;
-            rd = dw.CallGetItemFromDBAgain();
-            while (rd.Read())
+            try
             {
-                if ((!comboBox1.Items.Contains(rd["type"]) && (rd["type"] != "")))
-                    comboBox1.Items.Add(rd["type"]);
-                if ((!combobox2.Items.Contains(rd["brandname"]) && (rd["brandname"] != "") ))
-                    combobox2.Items.Add(rd["brandname"]);
-                if ((!combobox3.Items.Contains(rd["size"]) && (rd["size"] != "")))
-                    combobox3.Items.Add(rd["size"]);
+                SqlDataReader rd;
+                rd = dw.CustomerReviewMainSurface_2();
+                while (rd.Read())
+                {
+                    if ((!comboBox1.Items.Contains(rd["type"]) && (rd["type"] != "")))
+                        comboBox1.Items.Add(rd["type"]);
+
+                }
 
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
 
 
         }
 
-        public void ShowReviewOnGrid(string s,DataGridView dataGridView)
+        public void ShowReviewOnGrid(string s, DataGridView dataGridView)
         {
             DataTable dr = dw.ShowReviewOnGrid_2(s);
             dataGridView.DataSource = dr;
-           // dataGridView.Columns["Rating"].Visible = false;
+            // dataGridView.Columns["Rating"].Visible = false;
         }
 
 
-        public void AddCustomerInfo(string x,string y)
+        public void AddCustomerInfo(string x, string y)
         {
-            dw.AddCustomerInfo_2(x,y);
+            dw.AddCustomerInfo_2(x, y);
         }
 
 
         public string Lotselect(string s)
         {
-            SqlDataReader rd= dw.checkLot(s);
-
-            int k = 0;
-            if (rd.HasRows)
+            try
             {
-                rd.Read(); // read first row
+                SqlDataReader rd = dw.Lotselect_2(s);
 
-
-                if (rd["selectlot"] == DBNull.Value /*|| (int)rd["selectlot"] == 0*/ )
+                int k = 0;
+                if (rd.HasRows)
                 {
+                    rd.Read(); // read first row
 
-                    k = 0;
+
+                    if (rd["selectlot"] == DBNull.Value /*|| (int)rd["selectlot"] == 0*/ )
+                    {
+
+                        k = 0;
+                    }
+
+                    else if ((int)rd["selectlot"] == 0)
+                    {
+                        k = 0;
+                    }
+                    else if ((int)rd["selectlot"] == 1)
+                    {
+                        k = 1;
+                        goto done;
+                    }
+                    else
+                    {
+                        k = 5;
+                    }
                 }
 
-                else if ((int)rd["selectlot"] == 0)
-                {
-                    k = 0;
-                }
-                else if ((int)rd["selectlot"] == 1)
-                {
-                    k = 1;
-                    goto done;
-                }
+
+
                 else
                 {
-                    k = 5;
+                    k = 0;
                 }
+
+            done:
+
+
+
+                string str;
+                if (k == 1)
+                {
+                    str = "not Select as main lot";
+                }
+                else if (k == 0)
+                {
+                    dw.selectlot(s);
+                    str = "selected as main lot ";
+                }
+
+                else
+                {
+                    return "Can't complete precedure";
+                }
+
+                return str;
             }
 
-
-
-            else
+            catch (Exception e)
             {
-                k = 0;
+                MessageBox.Show(e.Message);
+                return null;
             }
-
-        done:
-           
-
-
-            string str;
-            if(k==1)
-            {
-                str = "not Select as main lot";
-            }
-            else if(k==0)
-            {
-                dw.selectlot(s);
-                str = "selected as main lot ";
-            }
-
-            else
-            {
-                return "Can't complete precedure";
-            }
-
-            return str;
         }
+
+
 
         public void lotUnsel(string s)
         {
@@ -192,47 +215,149 @@ namespace MainInterface.Logic
 
         }
 
-        public DataTable sendtologic(string s)
+        public DataTable Customer_Product_Search(string s)
         {
-            DataTable dt=
-            dw.send2db(s);
-            return dt;
-        }
-
-
-        public void cus_rev(string s,string d,string f)
-        {
-            dw.cus_rev2(s, d, f);
-        }
-
-        public void sendval(int x)
-        {
-            dw.sendval2(x);
-        }
-
-        public int callsavelogic(params string[] list)
-        {
-            return 
-            dw.callsavedb(list);
-        }
-
-        public string getlogin(string s,string d)
-        {
-            string str=dw.getlogindb(d);
-
-            if(str==s   )
+            try
             {
-                return "Password matched,welcome";
-              //  new FirstInt().Show();
-
+                DataTable dt =
+                dw.Customer_Product_Search_2(s);
+                return dt;
             }
 
-            else
+            catch (Exception e)
             {
-                return "try again!" + str + "  man ";
+                MessageBox.Show(e.Message);
+                return null;
+
+            }
+        }
+
+
+
+
+        public void Customer_Rating_Select(string s, string d, string f)
+        {
+            dw.Customer_Rating_Select_2(s, d, f);
+        }
+
+        public void Shoot_Rating(double x, string s, string d, string f)
+        {
+            dw.Shoot_Rating_2(x, s, d, f);
+        }
+
+
+
+        /// <summary>
+        ///check if every info is put or not
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public int SaveRegistrationInfo(params string[] list)
+        {
+            try
+            {
+                if (list[0] == "")
+                {
+                    MessageBox.Show("Put your first name");
+                    return -1;
+
+                }
+                else if (list[1] == "")
+                {
+                    MessageBox.Show("Put your Sur name");
+                    return -1;
+                }
+                else if ((list[2] == "") || (list[2].Contains("@") ==false) || (list[2].Contains(".") == false))
+                {
+                    MessageBox.Show("Put your Email");
+
+                    return -1;
+
+                }
+                else if ((list[3] == "") || (list[3].All(char.IsDigit)==false) || list[3].Length<11 || list[3].Length >11)
+                {
+                    MessageBox.Show("Put your Mobile");
+                    return -1;
+                }
+                else if ((list[4] == "" ) || (list[4].Any(char.IsDigit) == false) || (list[4].Any(char.IsLetter)==false) || list[4].Length < 8)
+                {
+                    MessageBox.Show("Put your password");
+                    return -1;
+
+                }
+                else
+                {
+                    return
+                    dw.SaveRegistrationInfo_2(list);
+                }
+            }
+            catch(Exception e)
+            {
+                return 0;
+            }
+        }
+
+        public string Admin_Login_Press(string s, string d)
+        {
+            try
+            {
+                string str = dw.Admin_Login_Press_2(d);
+
+                if (str == s)
+                {
+                    return "Password matched,welcome";
+                    //  new FirstInt().Show();
+
+                }
+
+                else
+                {
+                    return "try again!" + str + "  man ";
+                }
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return null;
             }
 
 
         }
+
+
+        public void CustomerRating(string s, ComboBox combobox2, ComboBox combobox3)
+        {
+            try
+            {
+
+                SqlDataReader dr;
+                dr = dw.CustomerRating_2(s);
+                combobox2.Items.Clear();
+                combobox2.ResetText();
+
+                combobox3.Items.Clear();
+                combobox3.ResetText();
+
+                while (dr.Read())
+                {
+
+                    if ((!combobox2.Items.Contains(dr["brandname"]) && (dr["brandname"] != "")))
+                        combobox2.Items.Add(dr["brandname"]);
+                    if ((!combobox3.Items.Contains(dr["size"]) && (dr["size"] != "")))
+                        combobox3.Items.Add(dr["size"]);
+
+                }
+                combobox2 = null;
+
+                combobox3 = null;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
     }
 }

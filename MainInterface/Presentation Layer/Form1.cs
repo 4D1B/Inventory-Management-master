@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MainInterface.Logic;
-
 namespace MainInterface.Presentation
 {
     public partial class Form1 : Form
@@ -16,6 +15,7 @@ namespace MainInterface.Presentation
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace MainInterface.Presentation
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -57,6 +57,40 @@ namespace MainInterface.Presentation
             Customer_Product_Overview Form = new Customer_Product_Overview();
             Form.Show();
             Hide();
+        }
+
+        private void MaterialRaisedButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaterialRaisedButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaterialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            Customer_Product_Overview Form = new Customer_Product_Overview();
+            Form.Show();
+            Hide();
+        }
+
+        private void Button2_Click_2(object sender, EventArgs e)
+        {
+            AdminView Form = new AdminView();
+            Form.Show();
+            Hide();
+        }
+
+        private void Button3_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

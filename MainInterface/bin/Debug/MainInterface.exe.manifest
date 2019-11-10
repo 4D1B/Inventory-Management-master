@@ -42,33 +42,33 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MainInterface.exe" size="84936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MainInterface.exe" size="88008">
       <assemblyIdentity name="MainInterface" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>B5xd3GatIBT0jlji3elvVMkrKov6X0ZhU/ykfNlxVFY=</dsig:DigestValue>
+        <dsig:DigestValue>myhS31pKhWef7IqzfsBPf6N7pvaXiPfwc5Eo2kaa204=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="MainInterface.exe.config" size="529">
+  <file name="MainInterface.exe.config" size="517">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kZ1J2jajCuznVYuV8TBS9ZGpA2rsQdun4k8/pP+9zDo=</dsig:DigestValue>
+      <dsig:DigestValue>7++SkglGK3BN6Er7UXGCGGw30XDR9pmOF+nDCT26tY8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MainInterface.pdb" size="194048" writeableType="applicationData">
+  <file name="MainInterface.pdb" size="202240" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>AI6O3E8JCrU4ms3e9jv/KrqhCg8xqc2ArhIHskxSK0U=</dsig:DigestValue>
+      <dsig:DigestValue>xDcTZh/SNuny+r6Txx2hfG7+2+nyqCJWnmjzW5LmABU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="mgmt.mdf" size="3145728" writeableType="applicationData">

@@ -18,14 +18,15 @@ namespace MainInterface.Presentation
         {
             InitializeComponent();
 
-            
+
+
         }
 
         LogicWork l1 = new LogicWork();
 
-        private void button2_Click(object sender, EventArgs e) 
+        private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = l1.CallLogicLayer(comboBox1.SelectedItem.ToString());
+            dataGridView1.DataSource = l1.SelectProductInfo(comboBox1.SelectedItem.ToString());
 
         }
 
@@ -64,7 +65,7 @@ namespace MainInterface.Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -79,13 +80,13 @@ namespace MainInterface.Presentation
 
         private void ProductList_Load(object sender, EventArgs e)
         {
-           
-            
-            
+
+
+
             SqlDataReader dr;
 
-            l1.GetItemFromLogic(comboBox1);
-            
+            l1.LoadproductInfo(comboBox1);
+
 
             //while (dr.Read())
             //{
@@ -93,28 +94,28 @@ namespace MainInterface.Presentation
             //        comboBox1.Items.Add(dr["type"]);
 
             //}
-           
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
 
-            textBox4.Text = (l1.CallAddItem(textBox1.Text, textBox2.Text, textBox3.Text, textBox10.Text)).ToString();
+            textBox4.Text = (l1.AddToProduct(textBox1.Text, textBox2.Text, textBox3.Text, textBox10.Text)).ToString();
 
             MessageBox.Show("Added Successfully...");
 
             SqlDataReader dr;
 
-            l1.GetItemFromLogic(comboBox1);
+            l1.LoadproductInfo(comboBox1);
 
 
-            dataGridView1.DataSource = l1.CallLogicLayer(comboBox1.SelectedItem.ToString());
+            dataGridView1.DataSource = l1.SelectProductInfo(comboBox1.SelectedItem.ToString());
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -139,7 +140,7 @@ namespace MainInterface.Presentation
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
 
 
         }
@@ -182,13 +183,13 @@ namespace MainInterface.Presentation
 
         private void button4_Click(object sender, EventArgs e)
         {
-            l1.UpdateLot((textBox7.Text), (textBox6.Text),(textBox5.Text), (textBox8.Text));
+            l1.UpdateLot((textBox7.Text), (textBox6.Text), (textBox5.Text), (textBox8.Text));
 
             SqlDataReader dr;
 
-            l1.GetItemFromLogic(comboBox1);
+            l1.LoadproductInfo(comboBox1);
 
-            dataGridView1.DataSource = l1.CallLogicLayer(comboBox1.SelectedItem.ToString());
+            dataGridView1.DataSource = l1.SelectProductInfo(comboBox1.SelectedItem.ToString());
         }
 
         private void label13_Click_1(object sender, EventArgs e)
@@ -203,9 +204,9 @@ namespace MainInterface.Presentation
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string x;    x= l1.Lotselect(textBox9.Text);
+            string x; x = l1.Lotselect(textBox9.Text);
             MessageBox.Show(x.ToString());
-            dataGridView1.DataSource = l1.CallLogicLayer(comboBox1.SelectedItem.ToString());
+            dataGridView1.DataSource = l1.SelectProductInfo(comboBox1.SelectedItem.ToString());
 
         }
 
@@ -213,12 +214,12 @@ namespace MainInterface.Presentation
         {
             l1.lotUnsel(textBox9.Text);
 
-            dataGridView1.DataSource = l1.CallLogicLayer(comboBox1.SelectedItem.ToString());
+            dataGridView1.DataSource = l1.SelectProductInfo(comboBox1.SelectedItem.ToString());
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-             
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -228,7 +229,7 @@ namespace MainInterface.Presentation
 
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Label12_Click(object sender, EventArgs e)

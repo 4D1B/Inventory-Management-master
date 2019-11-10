@@ -17,13 +17,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MainInterface.Logic;
+
 namespace MainInterface.Presentation
 {
     public partial class Customer_Product_Overview : Form
+
     {
         public Customer_Product_Overview()
         {
             InitializeComponent();
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,9 +65,7 @@ namespace MainInterface.Presentation
         LogicWork l1 = new LogicWork();
         private void Button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource
-
-            =l1.sendtologic(textBox1.Text);
+            dataGridView1.DataSource = l1.Customer_Product_Search(textBox1.Text);
 
             //  gets  specific product info based on textfield
 

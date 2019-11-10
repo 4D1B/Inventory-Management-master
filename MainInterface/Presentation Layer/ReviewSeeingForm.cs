@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MainInterface.Logic;
-
 namespace MainInterface.Presentation
 {
     public partial class ReviewSeeingForm : Form
@@ -17,6 +16,7 @@ namespace MainInterface.Presentation
         public ReviewSeeingForm()
         {
             InitializeComponent();
+
         }
 
         LogicWork l1 = new LogicWork();
@@ -35,7 +35,7 @@ namespace MainInterface.Presentation
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
 
         }
@@ -44,7 +44,7 @@ namespace MainInterface.Presentation
         {
             SqlDataReader dr;
 
-            l1.GetItemFromLogic(comboBox1);
+            l1.LoadproductInfo(comboBox1);
         }
     }
 }

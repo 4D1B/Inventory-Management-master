@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MainInterface.Logic;
+
 namespace MainInterface.Presentation
 {
     public partial class Registration_Form : Form
@@ -15,6 +16,8 @@ namespace MainInterface.Presentation
         public Registration_Form()
         {
             InitializeComponent();
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -42,10 +45,25 @@ namespace MainInterface.Presentation
         LogicWork l1 = new LogicWork();
         private void Button1_Click(object sender, EventArgs e)
         {
-            int x=
-            l1.callsavelogic(textBox1.Text, textBox6.Text, textBox5.Text, textBox3.Text, textBox2.Text);
+            int x =
+            l1.SaveRegistrationInfo(textBox1.Text, textBox5.Text, textBox6.Text, textBox3.Text, textBox2.Text);
+            if(x==- 1)
+            {
 
-            MessageBox.Show("You are " + x + "th user of the system");
+            }
+            else if (x != 0)
+            {
+                MessageBox.Show("You are " + x + "th user of the system");
+            }
+            else
+            {
+                MessageBox.Show("Information can't be taken! Enter different email id");
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
