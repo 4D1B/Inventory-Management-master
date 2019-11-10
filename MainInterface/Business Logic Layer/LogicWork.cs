@@ -254,8 +254,10 @@ namespace MainInterface.Logic
         /// <returns></returns>
         public int SaveRegistrationInfo(params string[] list)
         {
+           
             try
             {
+                 
                 if (list[0] == "")
                 {
                     MessageBox.Show("Put your first name");
@@ -285,7 +287,7 @@ namespace MainInterface.Logic
                     return -1;
 
                 }
-                else
+                else   
                 {
                     return
                     dw.SaveRegistrationInfo_2(list);
@@ -293,6 +295,7 @@ namespace MainInterface.Logic
             }
             catch(Exception e)
             {
+                MessageBox.Show(e.Message);
                 return 0;
             }
         }

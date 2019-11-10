@@ -564,6 +564,7 @@ namespace MainInterface.Database
 
         public int SaveRegistrationInfo_2(params string[] arr)
         {
+
             try
             {
                 SqlConnection con = new SqlConnection(datacon);
@@ -572,18 +573,20 @@ namespace MainInterface.Database
                 //check if email exists
 
 
+            
 
-
-                string query = string.Format("select id from admininfo where email = '{0}'",arr[2]);
+                string query = string.Format("select id from admininfo where email = '{0}'", arr[2]);
                 SqlCommand cmd = new SqlCommand(query, con);
 
-                int x;
-                object nullableValue = cmd.ExecuteScalar();
+                int x=Convert.ToInt32(cmd.ExecuteScalar());
                 con.Close();///// exception handling korte hobe email id same dile message dekhabe
 
-                if (nullableValue == null || nullableValue == DBNull.Value)
+           //     MessageBox.Show(x.ToString());
+
+
+                if (x == null || x==0)
                 {
-                   // MessageBox.Show("val");
+              //      MessageBox.Show("val");
                     try
                     {
                         SqlConnection con2 = new SqlConnection(datacon);
@@ -599,17 +602,21 @@ namespace MainInterface.Database
                         SqlCommand cmd2 = new SqlCommand(query2, con2);
 
                         int y = 0;
-                        object nullableValue2 = cmd2.ExecuteScalar();     ///// exception handling korte hobe email id same dile message dekhabe
+
+                        Object nullableValue2 = new Object();
+                        nullableValue2= cmd2.ExecuteScalar();     ///// exception handling korte hobe email id same dile message dekhabe
 
                         if (nullableValue2 == null || nullableValue2 == DBNull.Value)
-                            
+
                         {
+                     //       MessageBox.Show(nullableValue2.ToString());
                             y = 0;
                         }
                         else
 
                         {
-                           // MessageBox.Show(y.ToString());
+                         //   MessageBox.Show(nullableValue2.ToString());
+                            // MessageBox.Show(y.ToString());
                             int.TryParse((nullableValue2).ToString(), out y);
                         }
                         return y;
@@ -617,22 +624,23 @@ namespace MainInterface.Database
                     }
                     catch (Exception e)
                     {
+                        MessageBox.Show(e.Message + "vitore");
                         return 0;
                     }
                 }
                 else
                 {
-//MessageBox.Show("val" + nullableValue.ToString());
+                    //MessageBox.Show("val" + nullableValue.ToString());
                     return 0;
                     // int.TryParse((nullableValue).ToString(), out x);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message + "baire");
                 return 0;
             }
 
-           
         }
 
 
